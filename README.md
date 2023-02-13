@@ -64,6 +64,7 @@ data "http" "next_subnet" {
 output "next_subnet" {
   value = data.http.next_subnet.response_body
 }
+```
 
 _Please note, my function app will be taken down by Terraform regularly, chances are if you try to test query it, it will fail, so it is suggested you try your own_
 
