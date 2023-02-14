@@ -6,7 +6,7 @@ data "azurerm_management_group" "current_mgmt_group" {
 
 data "external" "os" {
   working_dir = path.module
-  program = ["printf", "{\"os\": \"Linux\"}"]
+  program     = ["printf", "{\"os\": \"Linux\"}"]
 }
 
 locals {
