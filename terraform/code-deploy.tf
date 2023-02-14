@@ -13,6 +13,8 @@ locals {
   output_path              = "${path.module}/${local.output_file_name}"
 }
 
+
+
 resource "azurerm_storage_container" "storage_container_function" {
   name                 = local.code_blob_container_name
   storage_account_name = module.sa.sa_name
@@ -46,7 +48,7 @@ resource "azurerm_storage_blob" "storage_blob_function" {
 
 resource "null_resource" "dependencies_install" {
   triggers = {
-    requirements_md5 = "${filemd5(local.dependencies_path)}"
+    requirements_md5 = filemd5(local.dependencies_path)
   }
   provisioner "local-exec" {
     command     = local.dependencies_install
