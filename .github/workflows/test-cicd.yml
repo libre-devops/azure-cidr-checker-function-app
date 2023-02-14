@@ -60,6 +60,7 @@ jobs:
       - name: Libre DevOps - Run Terraform for Azure - GitHub Action
         id: terraform-build
         uses: libre-devops/azure-terraform-gh-action@v1
+        needs: azure-terraform-job
         with:
           terraform-path: "terraform"
           terraform-workspace-name: "dev"
