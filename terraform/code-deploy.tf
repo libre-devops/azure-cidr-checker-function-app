@@ -7,8 +7,8 @@ locals {
   code_blob_container_name = "${local.project_name}releases"
   code_path                = "../src/Python"
   dependencies_path        = "${local.code_path}/requirements.txt"
-  shell_interpreter        = ["pwsh", "-Command"]
-  dependencies_install     = "pip install --target='${local.code_path}/.python_packages/lib/site-packages' -r ${local.dependencies_path}"
+  shell_interpreter        = ["python3", "-c"]
+  dependencies_install     = "import subprocess; subprocess.check_call(['pip', 'install', '--target', '${local.code_path}/.python_packages/lib/site-packages', '-r', '${local.dependencies_path}'])"
   output_file_name         = "${local.project_name}.${local.archive_file_type}"
   output_path              = "${path.module}/${local.output_file_name}"
 }

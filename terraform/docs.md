@@ -8,6 +8,7 @@ No requirements.
 |------|---------|
 | <a name="provider_archive"></a> [archive](#provider\_archive) | 2.3.0 |
 | <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 3.43.0 |
+| <a name="provider_external"></a> [external](#provider\_external) | 2.2.3 |
 | <a name="provider_null"></a> [null](#provider\_null) | 3.2.1 |
 
 ## Modules
@@ -35,6 +36,7 @@ No requirements.
 | [azurerm_management_group.current_mgmt_group](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/management_group) | data source |
 | [azurerm_role_definition.network_contributor](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/role_definition) | data source |
 | [azurerm_storage_account_blob_container_sas.storage_account_blob_container_sas](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/storage_account_blob_container_sas) | data source |
+| [external_external.os](https://registry.terraform.io/providers/hashicorp/external/latest/docs/data-sources/external) | data source |
 
 ## Inputs
 
@@ -47,4 +49,6 @@ No requirements.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_os"></a> [os](#output\_os) | n/a |
