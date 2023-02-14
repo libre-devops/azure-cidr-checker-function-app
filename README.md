@@ -58,7 +58,8 @@ locals {
 }
 
 data "http" "next_subnet" {
-  url = "https://fnc-ldo-euw-dev-01.azurewebsites.net/api/Find-NextCidrRange?subscription_id=${local.subscription_id}&resource_group_name=${local.resource_group_name}&virtual_network_name=${local.virtual_network_name}&new_subnet_size=${local.subnet_size}"
+  url    = "https://fnc-ldo-euw-dev-01.azurewebsites.net/api/Find-NextCidrRange?subscription_id=${local.subscription_id}&resource_group_name=${local.resource_group_name}&virtual_network_name=${local.virtual_network_name}&new_subnet_size=${local.subnet_size}"
+  method = "GET"
 }
 
 output "next_subnet" {
@@ -90,4 +91,8 @@ The terraform build (should you wish to use it) deploys a number of resources as
 
 ### Deploying with anything greater than Python 3.9x
 
-If you try to deploy the code using an interpeter newer than Python3.9, you will likely get some bugs from the package versions in the crypto library.  I am working on making this a docker container so I don't need to put up with it myself.
+If you try to deploy the code using an interpreter newer than Python3.8, you will likely get some bugs from the package versions in the crypto library.  I am working on making this a docker container, so I don't need to put up with it myself.
+
+2 workarounds exist -
+1. Hope that you have the correct Python version installed
+2. Use the core function tools to do the remote build for you, this can be seen in the `func-deploy.yml` as part of this repos Actions
