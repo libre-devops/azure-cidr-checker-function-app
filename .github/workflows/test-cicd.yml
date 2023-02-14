@@ -48,6 +48,7 @@ jobs:
     name: 'Terraform Destroy Build'
     runs-on: ubuntu-latest
     environment: tst
+    needs: azure-terraform-job
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
@@ -60,7 +61,6 @@ jobs:
       - name: Libre DevOps - Run Terraform for Azure - GitHub Action
         id: terraform-build
         uses: libre-devops/azure-terraform-gh-action@v1
-        needs: azure-terraform-job
         with:
           terraform-path: "terraform"
           terraform-workspace-name: "dev"
